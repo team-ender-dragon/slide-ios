@@ -1,16 +1,11 @@
-//
-//  HomeFeature.swift
-//  Slide
-//
-//  Created by hhhello0507 on 4/2/25.
-//
-
 import Foundation
 
 class HomeViewModel: ObservableObject {
-    @Published var posts: [Post]?
+    @Inject(\.slideService) var slideService
     
-    func fetchPosts() async throws {
+    @Published var slides: [Slide]?
+    
+    func getSlide() {
 //        let response = try await PostService.shared.get()
 //        self.posts = posts
     }

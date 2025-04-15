@@ -1,10 +1,3 @@
-//
-//  ProfileView.swift
-//  Slide
-//
-//  Created by hhhello0507 on 4/8/25.
-//
-
 import SwiftUI
 
 struct ProfileView: View {
@@ -12,7 +5,10 @@ struct ProfileView: View {
     @State private var isSignInSheetPresented = false
     
     var body: some View {
-        MyNavigationBar.default(title: "프로필") { _ in
+        MyNavigationBar.default(
+            title: "프로필",
+            background: .background(.normal)
+        ) {
             Button {
                 isSignInSheetPresented = true
             } label: {
@@ -21,6 +17,7 @@ struct ProfileView: View {
         }
         .sheet(isPresented: $isSignInSheetPresented) {
             VStack(spacing: 12) {
+                Spacer().frame(height: 16)
                 AppleSignInButton {
                     Task {
                         do {
@@ -44,8 +41,8 @@ struct ProfileView: View {
                 }
                 Spacer()
             }
-            .padding(.horizontal, 12)
-            .presentationDetents([.height(200)])
+            .padding(.horizontal, 16)
+            .presentationDetents([.height(220)])
         }
     }
 }

@@ -1,5 +1,7 @@
+import Foundation
+
 struct User: ModelProtocol {
     let id: Int
     let nickname: String
-    let avatarUrl: String
+    let avatarUrl: URL?
 }

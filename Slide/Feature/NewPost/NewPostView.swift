@@ -1,10 +1,3 @@
-//
-//  NewPostView.swift
-//  Slide
-//
-//  Created by hhhello0507 on 4/2/25.
-//
-
 import SwiftUI
 
 struct NewPostView: View {
@@ -20,7 +13,7 @@ struct NewPostView: View {
                     focused = nil
                 }
             ] : []
-        ) { _ in
+        ) {
             VStack(spacing: 0) {
                 TabView(selection: $selection) {
                     PageEditor(text: $text)
@@ -44,7 +37,7 @@ struct NewPostView: View {
                         .padding(.horizontal, 32)
                         .padding(.vertical, 48)
                     }
-                    .scaledButtonStyle()
+                    .scaledButton()
                     .tag(1)
                 }
                 .tabViewStyle(.page)
@@ -58,6 +51,7 @@ struct NewPostView: View {
                 .padding(.vertical, 4)
             }
         }
+        .navigationBarBackButtonHidden()
         .hideKeyboardWhenTap()
         .onChange(of: selection) {
             self.hideKeyboard()

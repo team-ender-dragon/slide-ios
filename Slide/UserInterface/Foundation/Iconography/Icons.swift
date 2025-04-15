@@ -32,10 +32,14 @@ public enum Icons: String, CaseIterable {
     case Camera
     case Chat
     case Crown
-    case Home
+    case EmailFill
+    case EmailLine
+    case HomeFill
+    case HomeLine
     case Manage
     case Moon
-    case Person
+    case PersonFill
+    case PersonLine
     case Ping
     case Send
     case Setting

@@ -55,19 +55,18 @@ public enum Colors {
             switch self {
             case .normal: ColorBox(P.neutral5, P.neutral99)
             case .neutral: ColorBox(P.neutral25, P.neutral80)
-            case .alternative: ColorBox(P.neutral60, P.neutral50)
-            case .assistive: ColorBox(P.neutral80, P.neutral30)
-            case .disable: ColorBox(P.neutral90, P.neutral20)
+            case .alternative: ColorBox(P.neutral60, P.neutral70)
+            case .assistive: ColorBox(P.neutral80, P.neutral50)
+            case .disable: ColorBox(P.neutral90, P.neutral30)
             }
         }
     }
     public enum Line: Colorable, CaseIterable {
-        case normal, neutral, alternative
+        case normal, alternative
         fileprivate var box: ColorBox {
             switch self {
-            case .normal: ColorBox(P.neutral90, P.neutral50)
-            case .neutral: ColorBox(P.neutral95, P.neutral30)
-            case .alternative: ColorBox(P.neutral97, P.neutral25)
+            case .normal: ColorBox(P.neutral90, P.neutral25)
+            case .alternative: ColorBox(P.neutral95, P.neutral30)
             }
         }
     }
@@ -94,11 +93,10 @@ public enum Colors {
     public enum Primary: Colorable, CaseIterable {
         case normal, alternative, assistive
         fileprivate var box: ColorBox {
-            let primary: Color = .label(.normal)
-            return switch self {
-            case .normal: ColorBox(primary, primary)
-            case .alternative: ColorBox(primary.opacity(0.65), primary.opacity(0.65))
-            case .assistive: ColorBox(primary.opacity(0.24), primary.opacity(0.2))
+            switch self {
+            case .normal: ColorBox(.white, .white)
+            case .alternative: ColorBox(.white.opacity(0.64), .white.opacity(0.64))
+            case .assistive: ColorBox(.white.opacity(0.24), .white.opacity(0.2))
             }
         }
     }
