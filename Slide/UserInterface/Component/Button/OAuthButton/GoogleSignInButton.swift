@@ -30,7 +30,13 @@ public struct GoogleSignInButton: View {
 
 #Preview {
     GoogleSignInButton {
-        
     }
     .registerWanted()
+}
+
+#Preview {
+    GoogleSignInButton {
+    }
+    .registerWanted()
+    .preferredColorScheme(.dark)
 }

@@ -3,20 +3,14 @@ import SwiftUI
 public extension MyButton {
     enum Role: Hashable, CaseIterable {
         case primary
-        case secondary
         case assistive
         
         var properties: Self.Properties {
             switch self {
             case .primary:
                     .init(
-                        foreground: .white,
+                        foreground: .primary(.onPrimary),
                         background: .primary(.normal)
-                    )
-            case .secondary:
-                    .init(
-                        foreground: .primary(.normal),
-                        background: .primary(.assistive)
                     )
             case .assistive:
                     .init(

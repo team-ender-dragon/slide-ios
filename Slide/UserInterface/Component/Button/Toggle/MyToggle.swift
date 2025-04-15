@@ -13,7 +13,7 @@ public struct MyToggle: View {
         Toggle("", isOn: $isOn)
             .tint(
                 isOn
-                ? .primary(.normal)
+                ? .custom(.black, Palette.green60)
                 : .fill(.alternative)
             )
             .fixedSize()

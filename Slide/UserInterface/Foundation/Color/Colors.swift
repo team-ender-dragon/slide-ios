@@ -91,12 +91,13 @@ public enum Colors {
         }
     }
     public enum Primary: Colorable, CaseIterable {
-        case normal, alternative, assistive
+        case normal, alternative, assistive, onPrimary
         fileprivate var box: ColorBox {
             switch self {
-            case .normal: ColorBox(.white, .white)
-            case .alternative: ColorBox(.white.opacity(0.64), .white.opacity(0.64))
-            case .assistive: ColorBox(.white.opacity(0.24), .white.opacity(0.2))
+            case .normal: ColorBox(P.neutral5, .white)
+            case .alternative: ColorBox(P.neutral5.opacity(0.64), .white.opacity(0.64))
+            case .assistive: ColorBox(P.neutral5.opacity(0.24), .white.opacity(0.2))
+            case .onPrimary: ColorBox(.white, P.neutral5)
             }
         }
     }
@@ -121,6 +122,16 @@ public extension ShapeStyle where Self == Color {
     
     static func primary(_ color: Colors.Primary) -> Color {
         color.color
+    }
+}
+
+private struct CustomColor: Colorable {
+    let box: ColorBox
+}
+
+public extension ShapeStyle where Self == Color {
+    static func custom(_ light: Color, _ dark: Color) -> Color {
+        CustomColor(box: ColorBox(light, dark)).color
     }
 }
 

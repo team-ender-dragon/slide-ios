@@ -20,7 +20,7 @@ public struct MyCheckbox: View {
                         .resizable()
                         .renderingMode(.template)
                         .frame(width: 14, height: 14)
-                        .foregroundStyle(.white)
+                        .foregroundStyle(.primary(.onPrimary))
                         .padding(2)
                         .background {
                             if isOn {

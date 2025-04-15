@@ -33,3 +33,10 @@ public struct AppleSignInButton: View {
     }
     .registerWanted()
 }
+
+#Preview {
+    AppleSignInButton {
+    }
+    .registerWanted()
+    .preferredColorScheme(.dark)
+}

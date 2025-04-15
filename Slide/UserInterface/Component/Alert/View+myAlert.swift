@@ -53,46 +53,52 @@ public extension View {
     }
 }
 
-#Preview {
-    struct MyAlertPreview: View {
-        @State private var showAlert1 = false
-        @State private var showAlert2 = false
-        @State private var showAlert3 = false
-        @State private var showAlert4 = false
-        
-        var body: some View {
-            VStack(spacing: 8) {
-                Button("Show 1") {
-                    showAlert1 = true
-                }
-                Button("Show 2") {
-                    showAlert2 = true
-                }
-                Button("Show 3") {
-                    showAlert3 = true
-                }
-                Button("Show 4") {
-                    showAlert4 = true
-                }
-                Spacer()
+private struct MyAlertPreview: View {
+    @State private var showAlert1 = false
+    @State private var showAlert2 = false
+    @State private var showAlert3 = false
+    @State private var showAlert4 = false
+    
+    var body: some View {
+        VStack(spacing: 8) {
+            Button("Show 1") {
+                showAlert1 = true
             }
-            .myAlert("제목을 입력해주세요", isPresented: $showAlert1) {
-                MyAlertButton("확인") {}
-                MyAlertButton("취소") {}
-            } message: {
-                Text("본문을 입력해주세요")
+            Button("Show 2") {
+                showAlert2 = true
             }
-            .myAlert("제목을 입력해주세요", isPresented: $showAlert2) {
-                Text("본문을 입력해주세요")
+            Button("Show 3") {
+                showAlert3 = true
             }
-            .myAlert("제목을 입력해주세요", isPresented: $showAlert3) {
-                MyAlertButton("확인") {
-                    print("확인")
-                }
+            Button("Show 4") {
+                showAlert4 = true
             }
-            .myAlert("제목을 입력해주세요", isPresented: $showAlert4)
-            .registerWanted()
+            Spacer()
         }
+        .myAlert("제목을 입력해주세요", isPresented: $showAlert1) {
+            MyAlertButton("확인") {}
+            MyAlertButton("취소") {}
+        } message: {
+            Text("본문을 입력해주세요")
+        }
+        .myAlert("제목을 입력해주세요", isPresented: $showAlert2) {
+            Text("본문을 입력해주세요")
+        }
+        .myAlert("제목을 입력해주세요", isPresented: $showAlert3) {
+            MyAlertButton("확인") {
+                print("확인")
+            }
+        }
+        .myAlert("제목을 입력해주세요", isPresented: $showAlert4)
+        .registerWanted()
     }
-    return MyAlertPreview()
+}
+
+#Preview {
+    MyAlertPreview()
+}
+
+#Preview {
+    MyAlertPreview()
+        .preferredColorScheme(.dark)
 }

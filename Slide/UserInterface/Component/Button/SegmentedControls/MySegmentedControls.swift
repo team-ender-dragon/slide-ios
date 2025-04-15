@@ -58,7 +58,7 @@ public struct MySegmentedControls<T: SegmentedControlsProtocol>: View {
         .frame(maxWidth: .infinity)
         .background(.fill(.neutral))
         .clipShape(.rect(cornerRadius: 12))
-        .onChange(of: selected) { newValue in
+        .onChange(of: selected) { _, newValue in
             selection.wrappedValue = newValue
             withAnimation(.spring(duration: 0.2)) {
                 animatedSelection = newValue

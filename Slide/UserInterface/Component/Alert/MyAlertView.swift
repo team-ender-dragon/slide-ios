@@ -76,11 +76,11 @@ public struct MyAlertView: View {
         HStack(spacing: 8) {
             if alert.buttons.count == 0 {
                 Spacer()
-                MyButton("닫기", size: .medium, role: .assistive, action: dismiss)
+                MyButton("닫기", role: .assistive, action: dismiss)
             } else if alert.buttons.count == 1 {
                 let alertButton = alert.buttons.first!
                 Spacer()
-                MyButton(alertButton.title, size: .medium, role: .assistive) {
+                MyButton(alertButton.title, role: .assistive) {
                     alertButton.action()
                     dismiss()
                 }
