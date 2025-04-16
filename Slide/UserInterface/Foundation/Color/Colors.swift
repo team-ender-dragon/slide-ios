@@ -82,11 +82,12 @@ public enum Colors {
         }
     }
     public enum Background: Colorable, CaseIterable {
-        case normal, alternative
+        case normal, alternative, assistive
         fileprivate var box: ColorBox {
             switch self {
-            case .normal: ColorBox(.white, P.neutral10)
-            case .alternative: ColorBox(P.neutral97, P.neutral5)
+            case .normal: ColorBox(.white, P.neutral5)
+            case .alternative: ColorBox(P.neutral97, P.neutral10)
+            case .assistive: ColorBox(.white, P.neutral15)
             }
         }
     }

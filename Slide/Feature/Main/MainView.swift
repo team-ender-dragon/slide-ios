@@ -1,10 +1,3 @@
-//
-//  MainView.swift
-//  Slide
-//
-//  Created by hhhello0507 on 4/1/25.
-//
-
 import SwiftUI
 
 enum MainDestination: Hashable {

@@ -120,9 +120,7 @@ struct MyNavigationBar<C, TC>: View where C: View, TC: View {
     }
     
     func makeButton(button: NavigationBarButton) -> some View {
-        Button {
-            button.action()
-        } label: {
+        Button(action: button.action) {
             switch button.type {
             case .icon(let icon):
                 icon

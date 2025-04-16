@@ -78,7 +78,7 @@ struct MyBottomBarItem: View {
     var body: some View {
         HStack {
             Spacer()
-            VStack(spacing: 0) {
+            Group {
                 switch page.type {
                 case let .icon(selectedIcon, unselectedIcon):
                     (isSelected ? selectedIcon : unselectedIcon)

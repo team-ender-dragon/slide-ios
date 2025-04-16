@@ -5,6 +5,7 @@ let isTest = false
 
 @main
 struct SlideApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     
     init() {
 //        if isTest {
@@ -28,6 +29,9 @@ struct SlideApp: App {
         WindowGroup {
             NavigationStack {
                 RootView()
+                    .task {
+                        try? await NotificationManager.shared.tryRequestNotificationPermission()
+                    }
             }
         }
     }

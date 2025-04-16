@@ -8,6 +8,7 @@ struct CommentSheetView: View {
             Spacer().frame(height: 20)
             Text("댓글")
                 .myFont(.bodyB)
+                .foregroundStyle(.label(.normal))
             MyDivider()
                 .padding(.top, 12)
             VStack(spacing: 0) {
@@ -44,6 +45,8 @@ struct CommentInput: View {
     var body: some View {
         HStack(spacing: 0) {
             TextField("생각을 남겨보세요.", text: $comment)
+                .myFont(.headlineR)
+                .foregroundStyle(.label(.normal))
                 .padding(12)
                 .advancedFocus()
             if !comment.isEmpty {
@@ -52,7 +55,7 @@ struct CommentInput: View {
                         .resizable()
                         .renderingMode(.template)
                         .frame(width: 28, height: 28)
-                        .foregroundStyle(.white)
+                        .foregroundStyle(.primary(.onPrimary))
                         .padding(.horizontal, 16)
                         .padding(.vertical, 2)
                         .background(.primary(.normal), in: .rect(cornerRadius: .infinity))

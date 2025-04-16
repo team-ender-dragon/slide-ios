@@ -13,6 +13,8 @@
 			</array>
 		</dict>
 	</array>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
 	<key>GIDClientID</key>
 	<string>859369770863-ii0pegbh96arguphm5tclrpo0b1pfn2d.apps.googleusercontent.com</string>
 	<key>UIAppFonts</key>
@@ -24,6 +26,10 @@
 		<string>WantedSans-Medium.otf</string>
 		<string>WantedSans-Regular.otf</string>
 		<string>WantedSans-SemiBold.otf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
 	</array>
 </dict>
 </plist>

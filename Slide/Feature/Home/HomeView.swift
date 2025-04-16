@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  Slide
-//
-//  Created by hhhello0507 on 4/1/25.
-//
-
 import SwiftUI
 
 struct HomeView: View {
@@ -49,6 +42,7 @@ struct HomeView: View {
             CommentSheetView()
                 .presentationDetents([.height(500), .large])
                 .presentationCornerRadius(28)
+                .presentationBackground(.background(.assistive))
         }
     }
     
@@ -142,6 +136,8 @@ struct SlideCellView: View {
                     .frame(width: 36, height: 36)
                     .clipShape(.circle)
                 Text("nickname")
+                    .myFont(.bodyR)
+                    .foregroundStyle(.label(.normal))
             }
             Spacer()
             HStack(spacing: 16) {
@@ -169,6 +165,7 @@ struct SlideCellView: View {
                             .fontWeight(.regular)
                         Text("728") // TODO: dummy
                             .myFont(.labelM)
+                            .foregroundStyle(.label(.normal))
                     }
                 }
                 .scaledButton()
@@ -182,6 +179,7 @@ struct SlideCellView: View {
                             .fontWeight(.regular)
                         Text("7k") // TODO: dummy
                             .myFont(.labelM)
+                            .foregroundStyle(.label(.normal))
                     }
                 }
                 .scaledButton()
