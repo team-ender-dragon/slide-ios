@@ -1,3 +1,4 @@
 import Combine
+import Moya
 
-typealias APIPublisher<T> = AnyPublisher<T, Error>
+typealias APIPublisher<T> = AnyPublisher<T, MoyaError>

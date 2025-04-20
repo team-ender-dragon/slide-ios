@@ -8,21 +8,25 @@ struct SlideApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     
     init() {
-//        if isTest {
-//            DIContainer.shared.register(
-//                .init(
-//                    slideService: TestSlideService(),
-//                    commentService: CommentServiceImpl()
-//                )
-//            )
-//        } else {
+        let netRunner = DefaultNetRunner(
+            provider: .init(
+                session: MoyaProviderUtil.mySession,
+                plugins: MoyaProviderUtil.myPlugins
+            ),
+            authProvider: .init(
+                session: MoyaProviderUtil.myAuthSession,
+                plugins: MoyaProviderUtil.myPlugins
+            ),
+            decoder: .decoder
+        )
         DIContainer.shared.register(
             .init(
-                slideService: SlideServiceImpl(),
-                commentService: CommentServiceImpl()
+                slideService: SlideServiceImpl(netRunner: netRunner),
+                commentService: CommentServiceImpl(netRunner: netRunner),
+                userService: UserServiceImpl(netRunner: netRunner),
+                authService: AuthServiceImpl(netRunner: netRunner)
             )
         )
-//        }
     }
     
     var body: some Scene {

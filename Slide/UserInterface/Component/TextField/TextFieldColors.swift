@@ -25,7 +25,7 @@ public struct TextFieldColors {
     public static let `default` = TextFieldColors(
         hintColor: .label(.assistive),
         strokeColor: .line(.normal),
-        foregroundColor: .label(.assistive), // TODO: fix dummy
+        foregroundColor: .label(.normal), // TODO: fix dummy
         iconColor: .label(.alternative),
         primaryColor: .primary(.normal),
         errorColor: Palette.red50

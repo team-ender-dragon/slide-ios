@@ -1,8 +1,5 @@
 import SwiftUI
 
-enum MainDestination: Hashable {
-    case newPost
-}
 
 struct MainView: View {
     @EnvironmentObject private var router: Router
@@ -21,15 +18,9 @@ struct MainView: View {
             ProfileView()
                 .page(.icon(selected: .icon(.PersonFill), unselected: .icon(.PersonLine)))
         } addAction: {
-            router.push(MainDestination.newPost)
+            router.push(.newPost)
         }
         .ignoresSafeArea(.keyboard)
-        .navigationDestination(for: MainDestination.self) { path in
-            switch path {
-            case .newPost:
-                NewPostView()
-            }
-        }
     }
 }
 

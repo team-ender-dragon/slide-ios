@@ -1,25 +1,25 @@
 import SwiftUI
 
-public final class Router: ObservableObject {
+final class Router: ObservableObject {
     @Published public var path = NavigationPath()
 }
 
 extension Router {
-    public func push(_ view: any Hashable) {
+    func push(_ view: NavGroup) {
         self.path.append(view)
     }
     
-    public func pop() {
+    func pop() {
         if !self.path.isEmpty {
             self.path.removeLast()
         }
     }
     
-    public func toRoot() {
+    func toRoot() {
         self.path.removeLast(self.path.count)
     }
     
-    public func replace(_ views: [any Hashable]) {
+    func replace(_ views: [NavGroup]) {
         toRoot()
         views.forEach {
             push($0)

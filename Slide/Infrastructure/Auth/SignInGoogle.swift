@@ -7,6 +7,7 @@ struct SignInGoogleResult {
 }
 
 class SignInGoogle {
+    @MainActor
     func signInWithGoogleFlow() async throws -> SignInGoogleResult {
         guard let topVC = UIApplicationUtil.rootViewController else {
             throw NSError()

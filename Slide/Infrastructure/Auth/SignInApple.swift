@@ -12,6 +12,7 @@ class SignInApple: NSObject {
     private var currentNonce: String?
     private var completionHandler: CompletionHandler?
     
+    @MainActor
     func signInWithAppleFlow() async throws -> SignInAppleResult {
         try await withCheckedThrowingContinuation { [weak self] continuation in
             self?.signInWithAppleFlow { result in
@@ -21,6 +22,7 @@ class SignInApple: NSObject {
         }
     }
     
+    @MainActor
     func signInWithAppleFlow(completion: @escaping CompletionHandler) {
         guard let topVC = UIApplicationUtil.rootViewController else {
             completion(.failure(NSError()))

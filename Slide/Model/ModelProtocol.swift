@@ -1,3 +1,3 @@
 import Foundation
 
-protocol ModelProtocol: Equatable {}
+protocol ModelProtocol: Hashable {}

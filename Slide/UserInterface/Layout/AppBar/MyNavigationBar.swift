@@ -50,7 +50,7 @@ struct MyNavigationBar<C, TC>: View where C: View, TC: View {
 
     static func small(
         title: String,
-        background: Color = .background(.alternative),
+        background: Color = .background(.normal),
         buttons: [NavigationBarButton] = [],
         @ViewBuilder trailingContent: @escaping () -> TC = { EmptyView() },
         @ViewBuilder content: @escaping () -> C

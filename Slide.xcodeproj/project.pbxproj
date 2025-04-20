@@ -12,6 +12,8 @@
 		25CBAE452DAF37E90091FAB0 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 25CBAE442DAF37E90091FAB0 /* FirebaseMessaging */; };
 		25D051B52DA545B400C0876E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 25D051B42DA545B400C0876E /* GoogleSignIn */; };
 		25D051B72DA545B400C0876E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 25D051B62DA545B400C0876E /* GoogleSignInSwift */; };
+		25FFA1FC2DB0A40000279915 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 25FFA1FB2DB0A40000279915 /* CombineMoya */; };
+		25FFA1FE2DB0A40000279915 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 25FFA1FD2DB0A40000279915 /* Moya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +48,10 @@
 			files = (
 				25D051B72DA545B400C0876E /* GoogleSignInSwift in Frameworks */,
 				2557EF552D9CF85F0040D5C2 /* ScopeKit in Frameworks */,
+				25FFA1FC2DB0A40000279915 /* CombineMoya in Frameworks */,
 				25CBAE452DAF37E90091FAB0 /* FirebaseMessaging in Frameworks */,
 				25CBAE432DAF37DD0091FAB0 /* FirebaseCore in Frameworks */,
+				25FFA1FE2DB0A40000279915 /* Moya in Frameworks */,
 				25D051B52DA545B400C0876E /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +108,8 @@
 				25D051B62DA545B400C0876E /* GoogleSignInSwift */,
 				25CBAE422DAF37DD0091FAB0 /* FirebaseCore */,
 				25CBAE442DAF37E90091FAB0 /* FirebaseMessaging */,
+				25FFA1FB2DB0A40000279915 /* CombineMoya */,
+				25FFA1FD2DB0A40000279915 /* Moya */,
 			);
 			productName = Slide;
 			productReference = 255486042D9BC85100C793F0 /* Slide.app */;
@@ -137,6 +143,7 @@
 				2557EF532D9CF85F0040D5C2 /* XCRemoteSwiftPackageReference "ScopeKit" */,
 				25D051B32DA545B400C0876E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				25CBAD222DAF374F0091FAB0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				25FFA1FA2DB0A40000279915 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 255486052D9BC85100C793F0 /* Products */;
@@ -402,6 +409,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		25FFA1FA2DB0A40000279915 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -429,6 +444,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 25D051B32DA545B400C0876E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		25FFA1FB2DB0A40000279915 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 25FFA1FA2DB0A40000279915 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		25FFA1FD2DB0A40000279915 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 25FFA1FA2DB0A40000279915 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
